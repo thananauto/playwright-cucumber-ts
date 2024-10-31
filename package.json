@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "prestart": "npx prettier src/**/**.ts --write",
+    "lint": "npx eslint  src/**/**.ts",
+    "prettier" :"npx prettier src/**/**.ts --write",
     "pretest": "npx ts-node src/utility/init.folder.ts",
     "test": "cross-env ENV=test FORCE_COLOR=0 cucumber-js test || exit 0",
     "test:failed": "cross-env ENV=test FORCE_COLOR=0 cucumber-js -p rerun @rerun.txt",
-    "posttest": "npx ts-node src/utility/report-generator.ts",
-    "dummy": "cross-env ENV=test cucumber-js test"
+    "posttest": "npx ts-node src/utility/report.generator.ts"
   },
   "keywords": [
     "Playwright",
