@@ -29,7 +29,7 @@ playwright-cucumber-ts/
 │   ├── utility/                
 │   │   ├── browser.factory.ts   # Global test hooks
 │   │   ├── init.folder.ts       # clean up report folders before every run
-|   |   ├── report-generator.ts  # code to create html report at end
+|   |   ├── report.generator.ts  # code to create html report at end
 |   ├── environment/ 
 |   |   ├── .env.{test | prod}   # Environment variables to set URL, BROWSER, TRACE and HEAD mode
 |   ├── hooks/
