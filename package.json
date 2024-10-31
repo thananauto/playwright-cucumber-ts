@@ -1,0 +1,32 @@
+{
+  "name": "playwright-cucumber-v1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npx prettier src/**/**.ts --write",
+    "pretest": "npx ts-node src/utility/init.folder.ts",
+    "test": "cross-env ENV=test FORCE_COLOR=0 cucumber-js test || exit 0",
+    "test:failed": "cross-env ENV=test FORCE_COLOR=0 cucumber-js -p rerun @rerun.txt",
+    "posttest": "npx ts-node src/utility/report-generator.ts",
+    "dummy": "cross-env ENV=test cucumber-js test"
+  },
+  "keywords": [
+    "Playwright",
+    "cucumber",
+    "TypeScript"
+  ],
+  "author": "thananjayan",
+  "license": "ISC",
+  "description": "Bolierplate code for combination of Playwright + Cucumber + TypeScript",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.0.1",
+    "@playwright/test": "^1.48.2",
+    "@types/node": "^22.8.2",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "fs-extra": "^11.2.0",
+    "multiple-cucumber-html-reporter": "^3.8.0",
+    "ts-node": "^10.9.2",
+    "typescript-eslint": "^8.12.2"
+  }
+}
